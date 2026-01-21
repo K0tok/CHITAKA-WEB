@@ -11,15 +11,15 @@
         <div class="logo"><img src="../images/logo.png" alt="Логотип" style="height: 40px;"></div>
         <nav>
             <ul class="nav-menu">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="search.html">Поиск</a></li>
-                <li><a href="favorites.html">Избранное</a></li>
-                <li><a href="profile.html">Профиль</a></li>
+                <li><a href="./index.html">Главная</a></li>
+                <li><a href="./search.html">Поиск</a></li>
+                <li><a href="./favorites.html">Избранное</a></li>
+                <li><a href="./profile.html">Профиль</a></li>
             </ul>
             <button class="burger-menu">☰</button>
         </nav>
     </header>
-    
+
     <main>
         <div class="form-container">
             <h1>Регистрация</h1>
@@ -42,30 +42,30 @@
                 </div>
                 <button type="submit" class="form-button">Зарегистрироваться</button>
             </form>
-            <a href="login.html" class="form-link">Уже есть аккаунт? Войдите</a>
+            <a href="./login.html" class="form-link">Уже есть аккаунт? Войдите</a>
         </div>
     </main>
-    
+
     <footer>
         <p>© 2025 Читака</p>
     </footer>
-    
+
     <script src="../script.js"></script>
     <script>
         document.getElementById('registerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
-            
+
             if (password !== confirmPassword) {
                 alert('Пароли не совпадают');
                 return;
             }
-            
+
             // В реальном приложении здесь была бы регистрация
             alert('Регистрация прошла успешно (в демонстрации без реальной регистрации)');
-            window.location.href = 'index-auth.html';
+            window.location.href = './index-auth.html';
         });
     </script>
 </body>

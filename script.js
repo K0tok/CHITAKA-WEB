@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Загрузка книг
     let books = [];
     
-    fetch('/data/books.json')
+    fetch('../data/books.json')
         .then(response => response.json())
         .then(data => {
             books = data;
-            
+
             if (window.location.pathname.includes('index-auth.html')) {
                 showRecommendedBooks(books);
                 showPopularBooks(books);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Ошибка загрузки книг:', error);
             books = getTestBooks();
-            
+
             if (window.location.pathname.includes('index-auth.html')) {
                 showRecommendedBooks(books);
                 showPopularBooks(books);
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             bookCard.addEventListener('click', function() {
-                window.location.href = `/pages/book.html?id=${book.id}`;
+                window.location.href = `./book.html?id=${book.id}`;
             });
         });
     }
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        fetch('/data/books.json')
+        fetch('../data/books.json')
             .then(response => response.json())
             .then(books => {
                 const favoriteBooks = books.filter(book => favorites.includes(book.id));
